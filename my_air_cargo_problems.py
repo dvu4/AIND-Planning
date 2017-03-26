@@ -414,7 +414,7 @@ def air_cargo_p2() -> AirCargoProblem:
            expr('At(P3, JFK)'),
            ] 
     
-    neg = create_expr_neg_list(pos, cargos, planes, airports)
+    #neg = create_expr_neg_list(pos, cargos, planes, airports)
     init = FluentState(pos, neg)
     goal = [expr('At(C1, JFK)'),
             expr('At(C2, SFO)'),
@@ -427,18 +427,18 @@ def air_cargo_p2() -> AirCargoProblem:
 def air_cargo_p3() -> AirCargoProblem:
     # TODO implement Problem 3 definition
     cargos = ['C1', 'C2', 'C3', 'C4']
-    planes = ['P1', 'P2', 'P3', 'P4']
+    planes = ['P1', 'P2']
     airports = ['JFK', 'SFO', 'ATL', 'ORD']
+
     pos = [expr('At(C1, SFO)'),
            expr('At(C2, JFK)'),
            expr('At(C3, ATL)'),
            expr('At(C4, ORD)'),
            expr('At(P1, SFO)'),
            expr('At(P2, JFK)'),
-           expr('At(P3, ATL)'),
-           expr('At(P4, ORD)'),
            ]   
            # C2
+    
     neg = [expr('At(C2, SFO)'),
            expr('At(C2, ATL)'),
            expr('At(C2, ORD)'),
@@ -469,10 +469,10 @@ def air_cargo_p3() -> AirCargoProblem:
            # P2
            expr('At(P2, SFO)'),
            expr('At(P2, ATL)'),
-           expr('At(P3, ORD)'),
+           expr('At(P2, ORD)'),
            ] 
     
-    neg = create_expr_neg_list(pos, cargos, planes, airports)
+    #neg = create_expr_neg_list(pos, cargos, planes, airports)
     init = FluentState(pos, neg)
     goal = [expr('At(C1, JFK)'),
             expr('At(C3, JFK)'),
